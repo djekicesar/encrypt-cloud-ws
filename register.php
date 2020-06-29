@@ -77,7 +77,7 @@ else:
                 $returnData = msg(0,422, 'This Username is already in use!');
             
             else:
-                $insert_query = "INSERT INTO users(username,password,email,csp,encryptionkey,accestoken,suid) 
+                $insert_query = "INSERT INTO users(username,passwword,email,csp,encryptionkey,accestoken,suid) 
                 VALUES(:username,:password,:email,:csp,:encryptionkey,:accestoken,:suid)";
 
                 $insert_stmt = $conn->prepare($insert_query);
