@@ -5,17 +5,9 @@
     "type": "project",
     "homepage": "https://github.com/djekicesar",
     "require": {
-        "php": "^7.0.0",
-        "ext-gd": "*",
-        "ext-intl": "*",
-        "ext-mbstring": "*",
-        "ext-soap": "*",
-        "ext-xmlrpc": "*"
+        "php": "^7.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "6.4.*",
-        "phpunit/dbUnit": "3.0.*",
-        "moodlehq/behat-extension": "3.34.1",
-        "mikey179/vfsStream": "^1.6"
+        "phpunit/phpunit": "6.4.*"
     }
 }
