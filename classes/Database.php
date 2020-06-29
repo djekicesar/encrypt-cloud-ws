@@ -29,7 +29,7 @@ class Database{
             $dbPassword = $dbopts["pass"];
             $dbName = ltrim($dbopts["path"],'/');
 
-            $conn = new PDO("pgsql:host='ec2-34-224-229-81.compute-1.amazonaws.com';port=5432;dbname=$dbName", $dbUser, $dbPassword);
+            $conn = new PDO("pgsql:host=ec2-34-224-229-81.compute-1.amazonaws.com;port=5432;dbname=d1cou21holpakh", 'jsdydixgxasdpu', '8bcfd0a836c26ac3de7cb1a321bbe8addd5058bcf414f56b46280ee02b8d75ba');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }
