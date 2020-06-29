@@ -16,6 +16,10 @@ class ComposerStaticInita25d0ad7007f8d7693b052290e557b8e
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'e' => 
+        array (
+            'encrypt-cloud\\' => 14,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -41,6 +45,10 @@ class ComposerStaticInita25d0ad7007f8d7693b052290e557b8e
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'encrypt-cloud\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/classes',
         ),
         'Webmozart\\Assert\\' => 
         array (
