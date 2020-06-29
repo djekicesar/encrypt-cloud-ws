@@ -60,7 +60,7 @@ else:
             // IF THE USER IS FOUNDED BY EMAIL
             if($query_stmt->rowCount()):
                 $row = $query_stmt->fetch(PDO::FETCH_ASSOC);
-                $check_password = password_verify($password, $row['password']);
+                $check_password = password_verify($password, $row['passwword']);
 
                 // VERIFYING THE PASSWORD (IS CORRECT OR NOT?)
                 // IF PASSWORD IS CORRECT THEN SEND THE LOGIN TOKEN
