@@ -68,7 +68,7 @@ else:
     else:
         try{
 
-            $check_username = "SELECT `username` FROM `users` WHERE `username`=:username";
+            $check_username = "SELECT username FROM users WHERE username=:username";
             $check_username_stmt = $conn->prepare($check_username);
             $check_username_stmt->bindValue(':username', $username,PDO::PARAM_STR);
             $check_username_stmt->execute();
@@ -77,7 +77,7 @@ else:
                 $returnData = msg(0,422, 'This Username is already in use!');
             
             else:
-                $insert_query = "INSERT INTO `users`(`username`,`password`,`email`,`csp`,`encryptionkey`,`accestoken`,`suid`) 
+                $insert_query = "INSERT INTO users(username,password,email,csp,encryptionkey,accestoken,suid) 
                 VALUES(:username,:password,:email,:csp,:encryptionkey,:accestoken,:suid)";
 
                 $insert_stmt = $conn->prepare($insert_query);

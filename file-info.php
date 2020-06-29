@@ -50,8 +50,8 @@ else:
     else:
         try{
 
-            $fetch_file_by_filename = "SELECT `filename`,`contenthash`,`encrypted`,`integritycheck` 
-            FROM `filemetadata` WHERE `filename`=:filename AND `userid` =:userid";
+            $fetch_file_by_filename = "SELECT filename,contenthash,encrypted,integritycheck 
+            FROM filemetadata WHERE filename=:filename AND userid =:userid";
             $query_stmt = $conn->prepare($fetch_file_by_filename);
             $query_stmt->bindValue(':filename', $filename,PDO::PARAM_STR);
             $query_stmt->bindValue(':userid', $userid,PDO::PARAM_INT);

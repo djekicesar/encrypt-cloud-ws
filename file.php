@@ -59,7 +59,7 @@ else:
     else:
         try{
 
-            $check_filename = "SELECT `filename` FROM `filemetadata` WHERE `filename`=:filename";
+            $check_filename = "SELECT filename FROM filemetadata WHERE filename=:filename";
             $check_username_stmt = $conn->prepare($check_filename);
             $check_username_stmt->bindValue(':filename', $filename,PDO::PARAM_STR);
             $check_username_stmt->execute();
@@ -68,7 +68,7 @@ else:
                 $returnData = msg(0,422, ''.$filename.' already existe!');
             
             else:
-                $insert_query = "INSERT INTO `filemetadata`(`userid`,`filename`,`contenthash`,`encrypted`,`integritycheck`) 
+                $insert_query = "INSERT INTO filemetadata(userid,filename,contenthash,encrypted,integritycheck) 
                 VALUES(:userid,:filename,:contenthash,:encrypted,:integritycheck)";
 
                 $insert_stmt = $conn->prepare($insert_query);
