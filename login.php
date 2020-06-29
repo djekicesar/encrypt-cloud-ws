@@ -52,7 +52,7 @@ else:
     else:
         try{
             
-            $fetch_user_by_username = "SELECT * FROM `users` WHERE `username`=:username";
+            $fetch_user_by_username = "SELECT * FROM users WHERE username=:username";
             $query_stmt = $conn->prepare($fetch_user_by_username);
             $query_stmt->bindValue(':username', $username,PDO::PARAM_STR);
             $query_stmt->execute();
