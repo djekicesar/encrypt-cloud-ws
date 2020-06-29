@@ -9,7 +9,7 @@ class Database{
     public function dbConnection(){
         
         try{
-            $conn = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name,$db_username,$db_password");
+            $conn = new PDO("pgsql:dbname=$db_name;host=$db_host", $db_username, $db_password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }
