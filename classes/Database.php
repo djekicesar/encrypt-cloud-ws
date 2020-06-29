@@ -19,14 +19,17 @@ class Database{
             // $db_password);
 
             // $conn = new \PDO($conStr);
-            $conn = (function(){
-                $parts = (parse_url(getenv('postgres://jsdydixgxasdpu:8bcfd0a836c26ac3de7cb1a321bbe8addd5058bcf414f56b46280ee02b8d75ba@ec2-34-224-229-81.compute-1.amazonaws.com:5432/d1cou21holpakh')
-                 ?: 'postgresql://jsdydixgxasdpu:8bcfd0a836c26ac3de7cb1a321bbe8addd5058bcf414f56b46280ee02b8d75ba@ec2-34-224-229-81.compute-1.amazonaws.com
-                 :5432/d1cou21holpakh'));
-                extract($parts);
-                $path = ltrim($path, "/");
-                return new PDO("pgsql:host={$host};port={$port};dbname={$path}", $user, $pass);
-            })();
+            $dbUrl = getenv('postgres://jsdydixgxasdpu:8bcfd0a836c26ac3de7cb1a321bbe8addd5058bcf414f56b46280ee02b8d75ba@ec2-34-224-229-81.compute-1.amazonaws.com:5432/d1cou21holpakh');
+
+            $dbopts = parse_url($dbUrl);
+
+            $dbHost = $dbopts["host"];
+            $dbPort = $dbopts["port"];
+            $dbUser = $dbopts["user"];
+            $dbPassword = $dbopts["pass"];
+            $dbName = ltrim($dbopts["path"],'/');
+
+            $conn = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }
