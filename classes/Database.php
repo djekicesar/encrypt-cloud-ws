@@ -5,13 +5,13 @@ class Database{
     private $db_name = 'd1cou21holpakh';
     private $db_username = 'jsdydixgxasdpu';
     private $db_password = '8bcfd0a836c26ac3de7cb1a321bbe8addd5058bcf414f56b46280ee02b8d75ba';
-    private $db_port=5432;
+    private $db_port = 5432;
     
     public function dbConnection(){
         
         try{
             // $conn = new PDO('mysql:host='.$this->db_host.';dbname='.$this->db_name,$this->db_username,$this->db_password);
-            $conStr = sprintf("pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s", 
+            $conStr = sprintf("pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s;sslmode=require", 
             $db_host, 
             $db_port, 
             $db_name, 
